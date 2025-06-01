@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decorative Glass Film - Artful Home</title>
+   <!-- Google Fonts - Playfair Display -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --gold: hsl(45, 65%, 52%);
+      --gold-light: hsl(45, 70%, 80%);
+      --gold-dark: hsl(45, 65%, 40%);
+      --text-dark: #333333;
+      --text-light: #777777;
+      --bg-light: #ffffff;
+      --bg-off-white: #f9f9f9;
+      --shadow: 0 10px 30px rgba(212, 175, 55, 0.10), 0 1px 5px rgba(0, 0, 0, 0.05);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-dark);
+      line-height: 1.6;
+      background-color: var(--bg-light);
+    }
+    
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+    
+    h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-dark);
+    }
+    
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-light);
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    .header {
+      background-color: white;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1rem 0;
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    
+    .logo span {
+      color: var(--gold);
+    }
+    
+    .breadcrumb {
+      background-color: var(--bg-off-white);
+      padding: 0.75rem 0;
+      margin-bottom: 2rem;
+    }
+    
+    .breadcrumb-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    .breadcrumb-item {
+      display: flex;
+      align-items: center;
+    }
+    
+    .breadcrumb-item:not(:last-child)::after {
+      content: "/";
+      margin: 0 0.5rem;
+      color: var(--text-light);
+    }
+    
+    .breadcrumb-link {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .breadcrumb-link:hover {
+      color: var(--gold);
+    }
+    
+    .breadcrumb-current {
+      color: var(--gold);
+      font-weight: 500;
+    }
+    
+    .page-title {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    
+    .page-title h1 {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+    
+    .page-title h1::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 25%;
+      width: 50%;
+      height: 2px;
+      background-color: var(--gold);
+    }
+    
+    .page-description {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 3rem;
+      color: var(--text-light);
+    }
+    
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .product-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(212, 175, 55, 0.15), 0 3px 10px rgba(0, 0, 0, 0.07);
+    }
+    
+    .product-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    
+    .product-content {
+      padding: 1.5rem;
+    }
+    
+    .product-title {
+      margin-bottom: 0.75rem;
+    }
+    
+    .product-description {
+      margin-bottom: 1.5rem;
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+    
+    .product-buttons {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    .btn {
+      padding: 0.6rem 1rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      cursor: pointer;
+      border: none;
+      text-align: center;
+    }
+    
+    .btn-call {
+      background-color: var(--gold);
+      color: white;
+      flex: 1;
+    }
+    
+    .btn-call:hover {
+      background-color: var(--gold-dark);
+    }
+    
+    .btn-whatsapp {
+      background-color: #25D366;
+      color: white;
+      flex: 1;
+    }
+    
+    .btn-whatsapp:hover {
+      background-color: #128C7E;
+    }
+    
+    .btn-more {
+      background-color: transparent;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      flex: 1;
+    }
+    
+    .btn-more:hover {
+      background-color: var(--gold);
+      color: white;
+    }
+    
+    .contact-banner {
+      background-color: var(--gold-light);
+      padding: 2rem 0;
+      margin: 3rem 0;
+      text-align: center;
+    }
+    
+    .contact-title {
+      margin-bottom: 1rem;
+    }
+    
+    .contact-description {
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+    }
+    
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .footer {
+      background-color: var(--text-dark);
+      color: white;
+      padding: 3rem 0;
+    }
+    
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    
+    .footer-column {
+      flex: 1;
+      min-width: 200px;
+    }
+    
+    .footer-title {
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-link {
+      margin-bottom: 0.75rem;
+    }
+    
+    .footer-link a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-link a:hover {
+      color: var(--gold);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.5);
+    }
+    
+    .tag {
+      display: inline-block;
+      background-color: var(--gold-light);
+      color: var(--gold-dark);
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .product-tags {
+      margin-bottom: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+      .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+      
+      .product-buttons {
+        flex-direction: column;
+      }
+      
+      .btn {
+        width: 100%;
+      }
+      
+      .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+      }
+      
+      .footer-column {
+        width: 100%;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      .product-image {
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar">
+  <div class="container">
+    <div class="navbar-content">
+      <a href="../index.htm" class="navbar-logo">
+        <span class="gold-text">Artful</span> Home
+      </a>
+
+      <div class="navbar-links desktop-only">
+        <a href="../bamboo_blinds/index.htm">Window Blinds</a>
+        <a href="../wall_coverings/index.htm">Wall Papers</a>
+        <a href="../insect_screens/index.htm">Insect Screens</a>
+        <a href="../glass_film/index.htm" class="active">Glass Film</a>
+        <a href="../flooring/index.htm">Flooring</a>
+        <a href="../other_products/index.htm">Other Products</a>
+      </div>
+
+      <div class="navbar-contact desktop-only">
+        <a href="tel:6380655921">
+          <i class="fas fa-phone"></i>
+          <span>Call 6380655921</span>
+        </a>
+        <a href="mailto:priya_interactive@yahoo.com?subject=Enquiry from Website">
+          <i class="fas fa-envelope"></i>
+          <span>E-Mail</span>
+        </a>
+      </div>
+
+      <button class="menu-toggle mobile-only">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <a href="../bamboo_blinds/index.htm">Window Blinds</a>
+      <a href="../wall_coverings/index.htm">Wall Papers</a>
+      <a href="../insect_screens/index.htm">Insect Screens</a>
+      <a href="../glass_film/index.htm" class="active">Glass Film</a>
+      <a href="../flooring/index.htm">Flooring</a>
+      <a href="../other_products/index.htm">Other Products</a>
+      <div class="mobile-contact">
+        <a href="tel:6380655921">
+          <i class="fas fa-phone"></i>
+          <span>Call 6380655921</span>
+        </a>
+        <a href="mailto:priya_interactive@yahoo.com?subject=Enquiry from Website">
+          <i class="fas fa-envelope"></i>
+          <span>E-Mail</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+  <header class="header">
+    <div class="container header-content">
+      <div class="logo">
+        <span>Artful</span> Home
+      </div>
+    </div>
+  </header>
+
+  <div class="breadcrumb">
+    <div class="container">
+      <ul class="breadcrumb-list">
+        <li class="breadcrumb-item">
+          <a href="../glass_film/index.htm" class="breadcrumb-link">Home</a>
+        </li>
+        <li class="breadcrumb-item">
+          <span class="breadcrumb-current">Decorative Glass Film</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="page-title">
+    <div class="container">
+      <h1>Decorative Glass Film</h1>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="page-description">
+      <p>Transform ordinary glass surfaces into stunning design features with our decorative glass films. Available in a wide range of patterns, textures, and styles, these films add beauty and privacy to any space while being easy to install and maintain.</p>
+    </div>
+
+    <div class="products-grid">
+      <!-- Product 1 -->
+      <div class="product-card">
+        <img src="glass_film_images/decorative_glass_film/decorative4.webp" alt="Geometric Pattern Film" class="product-image">
+        <div class="product-content">
+          <div class="product-tags">
+            <span class="tag">Modern</span>
+            <span class="tag">Office</span>
+            <span class="tag">Partition</span>
+          </div>
+          <h3 class="product-title">Decorative glass film</h3>
+          <p class="product-description">Artful Home introduces a range of specialised materials for aesthetic interiors -materials that double up for decorative glass, materials that can be printed upon in unlimited colours and imagery, materials that can be applied on glass. Clear graphics on glass films is also a better alternate.</p>
+          <div class="product-buttons">
+            <a href="tel:6380655921" class="btn btn-call">Call Now</a>
+            <a href="https://wa.me/916380655921/?text=Can%20you%20share%20me%20more%20details%20about%20frosted%20film.%20I%20am%20located%20at" class="btn btn-whatsapp">WhatsApp</a>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <img src="glass_film_images/decorative_glass_film/decorative3.webp" alt="Floral Motif Film" class="product-image">
+        <div class="product-content">
+          <div class="product-tags">
+            <span class="tag">Elegant</span>
+            <span class="tag">Home</span>
+            <span class="tag">Vintage</span>
+          </div>
+          <h3 class="product-title">Decorative Glass Film - Change designs without removing glass</h3>
+          <p class="product-description">The Main advantage of decorative film is you can change or remove the film even ever you want without removing your glass. These are well suited like if you want the cabin to be alerted or in showroom entrance if you running a offer then you can do with decorative film and remove the film when the offer gets over</p>
+          <div class="product-buttons">
+            <a href="tel:6380655921" class="btn btn-call">Call Now</a>
+            <a href="https://wa.me/916380655921/?text=Can%20you%20share%20me%20more%20details%20about%20frosted%20film.%20I%20am%20located%20at" class="btn btn-whatsapp">WhatsApp</a>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <img src="glass_film_images/decorative_glass_film/decorative5.webp" alt="Abstract Lines Film" class="product-image">
+        <div class="product-content">
+          <div class="product-tags">
+            <span class="tag">Modern</span>
+            <span class="tag">Artistic</span>
+            <span class="tag">Commercial</span>
+          </div>
+          <h3 class="product-title">Decorative Glass Film - Installation made simple</h3>
+          <p class="product-description">The glass film requires less time to install to your design. It be installed in few hours. The major advantage of using glass film is you no need to remove the glass unlike etched glass. You can install the film after fixing the glass.</p>
+          <div class="product-buttons">
+            <a href="tel:6380655921" class="btn btn-call">Call Now</a>
+            <a href="https://wa.me/916380655921/?text=Can%20you%20share%20me%20more%20details%20about%20frosted%20film.%20I%20am%20located%20at" class="btn btn-whatsapp">WhatsApp</a>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card">
+        <img src="glass_film_images/decorative_glass_film/decorative12.webp" alt="Glass Bamboo Film" class="product-image">
+        <div class="product-content">
+          <div class="product-tags">
+            <span class="tag">Nature</span>
+            <span class="tag">Zen</span>
+            <span class="tag">Spa</span>
+          </div>
+          <h3 class="product-title">Decorative Film for Entrance Door</h3>
+          <p class="product-description">Design your office with style. Decorative film suits very well to decorate your entrance door. It is suitable for privacy for large entrance door as well as decorative film is suited for small door for cabins.</p>
+          <div class="product-buttons">
+            <a href="tel:6380655921" class="btn btn-call">Call Now</a>
+            <a href="https://wa.me/916380655921/?text=Can%20you%20share%20me%20more%20details%20about%20frosted%20film.%20I%20am%20located%20at" class="btn btn-whatsapp">WhatsApp</a>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product-card">
+        <img src="glass_film_images/decorative_glass_film/decorative13.webp" alt="Stained Glass Effect" class="product-image">
+        <div class="product-content">
+          <div class="product-tags">
+            <span class="tag">Classic</span>
+            <span class="tag">Artistic</span>
+            <span class="tag">Colorful</span>
+          </div>
+          <h3 class="product-title">Decorative Film for Glass</h3>
+          <p class="product-description">Easily cut to any shape - logo, graphic, outline, words, etc, by an electronic plotters. Ideal for branding, decor element or privacy. Suitable for office & showrooms.</p>
+          <div class="product-buttons">
+            <a href="tel:6380655921" class="btn btn-call">Call Now</a>
+            <a href="https://wa.me/916380655921/?text=Can%20you%20share%20me%20more%20details%20about%20frosted%20film.%20I%20am%20located%20at" class="btn btn-whatsapp">WhatsApp</a>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="product-card">
+        <img src="glass_film_images/decorative_glass_film/decorative10.webp" alt="Textile Pattern Film" class="product-image">
+        <div class="product-content">
+          <div class="product-tags">
+            <span class="tag">Textile</span>
+            <span class="tag">Soft</span>
+            <span class="tag">Elegant</span>
+          </div>
+          <h3 class="product-title">Decorative Film with logo and branding</h3>
+          <p class="product-description">Ideal for branding, decor element or . We can bring only logo or branding in the film. Branding using decorative film gives a very elegant look</p>
+          <div class="product-buttons">
+            <a href="tel:6380655921" class="btn btn-call">Call Now</a>
+            <a href="https://wa.me/916380655921/?text=Can%20you%20share%20me%20more%20details%20about%20frosted%20film.%20I%20am%20located%20at" class="btn btn-whatsapp">WhatsApp</a>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 7 -->
+      <div class="product-card">
+        <img src="glass_film_images/decorative_glass_film/decorative9.webp" alt="Art Deco Film" class="product-image">
+        <div class="product-content">
+          <div class="product-tags">
+            <span class="tag">Luxury</span>
+            <span class="tag">Vintage</span>
+            <span class="tag">Elegant</span>
+          </div>
+          <h3 class="product-title">Decorative Film for Conference Room & Cabins</h3>
+          <p class="product-description">Decorative film provides privacy for small and large conference rooms, cabins. It may be small cabin or a large area with a long cabins and conference room. The decorative film can provide best privacy for it.</p>
+          <div class="product-buttons">
+            <a href="tel:6380655921" class="btn btn-call">Call Now</a>
+            <a href="https://wa.me/916380655921/?text=Can%20you%20share%20me%20more%20details%20about%20frosted%20film.%20I%20am%20located%20at" class="btn btn-whatsapp">WhatsApp</a>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 8 -->
+      <div class="product-card">
+        <img src="glass_film_images/decorative_glass_film/decorative11.webp" alt="Waves Pattern Film" class="product-image">
+        <div class="product-content">
+          <div class="product-tags">
+            <span class="tag">Modern</span>
+            <span class="tag">Dynamic</span>
+            <span class="tag">Office</span>
+          </div>
+          <h3 class="product-title">Decorative Film - Easily cut to any shape</h3>
+          <p class="product-description">Easily cut to any shape - logo, graphic, outline, words, etc, by an electronic plotters. Ideal for branding, decor element or privacy. Suitable for office & showrooms.</p>
+          <div class="product-buttons">
+            <a href="tel:6380655921" class="btn btn-call">Call Now</a>
+            <a href="https://wa.me/916380655921/?text=Can%20you%20share%20me%20more%20details%20about%20frosted%20film.%20I%20am%20located%20at" class="btn btn-whatsapp">WhatsApp</a>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 9 -->
+      <div class="product-card">
+        <img src="glass_film_images/decorative_glass_film/decorative11.webp" alt="Moroccan Tile Film" class="product-image">
+        <div class="product-content">
+          <div class="product-tags">
+            <span class="tag">Exotic</span>
+            <span class="tag">Pattern</span>
+            <span class="tag">Colorful</span>
+          </div>
+          <h3 class="product-title">Decorative Film - Best for safety</h3>
+          <p class="product-description">The glass film holds glass together to lessen the likelihood of flying shards during natural and man-made disasters. This gives more safety in the workplace from injury and property damage. It becomes difficult for thefts and make forced entry</p>
+          <div class="product-buttons">
+            <a href="tel:6380655921" class="btn btn-call">Call Now</a>
+            <a href="https://wa.me/916380655921/?text=Can%20you%20share%20me%20more%20details%20about%20frosted%20film.%20I%20am%20located%20at" class="btn btn-whatsapp">WhatsApp</a>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 10 -->
+      <div class="product-card">
+        <img src="glass_film_images/decorative_glass_film/decorative12.webp" alt="Custom Digital Print Film" class="product-image">
+        <div class="product-content">
+          <div class="product-tags">
+            <span class="tag">Custom</span>
+            <span class="tag">Branding</span>
+            <span class="tag">Unique</span>
+          </div>
+          <h3 class="product-title">Decorative Film - Always better over Etched Glass</h3>
+          <p class="product-description">Advantage of using Glass Film over Etched Glass - The glass film from Artful Home offers the look of an etched glass window but at a cheaper cost than etched glass. The glass film is easier to install than etched glass</p>
+          <div class="product-buttons">
+            <a href="tel:6380655921" class="btn btn-call">Call Now</a>
+            <a href="https://wa.me/916380655921/?text=Can%20you%20share%20me%20more%20details%20about%20frosted%20film.%20I%20am%20located%20at" class="btn btn-whatsapp">WhatsApp</a>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 11 -->
+      <div class="product-card">
+        <img src="glass_film_images/decorative_glass_film/decorative13.webp" alt="Gradient Color Film" class="product-image">
+        <div class="product-content">
+          <div class="product-tags">
+            <span class="tag">Modern</span>
+            <span class="tag">Colorful</span>
+            <span class="tag">Contemporary</span>
+          </div>
+          <h3 class="product-title">Decorative Film - decreases interior fading</h3>
+          <p class="product-description">Artful Home's glass film blocks up to 98% of harmful UV rays, reducing interior fading and glare. It’s scratch-resistant and easily removable, allowing design updates without damaging the glass. Commonly used in offices, restaurants, hotels, showrooms, schools, hospitals, and homes.</p>
+          <div class="product-buttons">
+            <a href="tel:6380655921" class="btn btn-call">Call Now</a>
+            <a href="https://wa.me/916380655921/?text=Can%20you%20share%20me%20more%20details%20about%20frosted%20film.%20I%20am%20located%20at" class="btn btn-whatsapp">WhatsApp</a>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 12 -->
+      <div class="product-card">
+        <img src="glass_film_images/decorative_glass_film/decorative2.webp" alt="Rice Paper Film" class="product-image">
+        <div class="product-content">
+          <div class="product-tags">
+            <span class="tag">Asian</span>
+            <span class="tag">Natural</span>
+            <span class="tag">Traditional</span>
+          </div>
+          <h3 class="product-title">Decorative Window Film - Bamboo | Privacy Window Film</h3>
+          <p class="product-description">This bamboo window film is a total privacy window covering with areas of light frosted leaves and stems on a frosted background.Although the lite frosted areas do show allow more colors and shadows to show through, there are no clear areas on this static cling film.</p>
+          <div class="product-buttons">
+            <a href="tel:6380655921" class="btn btn-call">Call Now</a>
+            <a href="https://wa.me/916380655921/?text=Can%20you%20share%20me%20more%20details%20about%20frosted%20film.%20I%20am%20located%20at" class="btn btn-whatsapp">WhatsApp</a>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 13 -->
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1551038247-3d9af20df552" alt="Terrazzo Pattern Film" class="product-image">
+        <div class="product-content">
+          <div class="product-tags">
+            <span class="tag">Modern</span>
+            <span class="tag">Trendy</span>
+            <span class="tag">Colorful</span>
+          </div>
+          <h3 class="product-title">Terrazzo Pattern Film</h3>
+          <p class="product-description">Inspired by Italian terrazzo floors, this trendy pattern adds playful speckles and color to contemporary spaces and modern retail environments.</p>
+          <div class="product-buttons">
+            <a href="tel:6380655921" class="btn btn-call">Call Now</a>
+            <a href="https://wa.me/916380655921/?text=Can%20you%20share%20me%20more%20details%20about%20frosted%20film.%20I%20am%20located%20at" class="btn btn-whatsapp">WhatsApp</a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-banner">
+    <div class="container">
+      <h2 class="contact-title">Upgrade Your Space with Decorative Glass Film</h2>
+      <p class="contact-description">From subtle patterns to bold statements, our decorative films transform ordinary glass into stunning features. Contact us for samples and professional consultation.</p>
+      <div class="contact-buttons">
+        <a href="tel:6380655921" class="btn btn-call">Call Us: 6380655921</a>
+        <a href="https://wa.me/916380655921/?text=Can%20you%20share%20me%20more%20details%20about%20frosted%20film.%20I%20am%20located%20at" class="btn btn-whatsapp">Contact on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+     <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3><span class="gold-text">Artful</span> Home</h3>
+            <p>Premium decorative and frosted glass films for offices and residences.</p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+          
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="../glass_film/index.htm">Home</a></li>
+              <li><a href="cities.html">All Cities</a></li>
+              
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h3>Our Products</h3>
+              <ul class="footer-links">
+            <li class="footer-link"><a href="frosted_film.htm">Frosted Glass Film</a></li>
+            <li class="footer-link"><a href="3m_glass_film.htm">3M Frosted Glass Film</a></li>
+            <li class="footer-link"><a href="decorative_glass_films.htm">Decorative Glass Film</a></li>
+            <li class="footer-link"><a href="suncontrol_film.htm">Sun Control Film</a></li>
+            <li class="footer-link"><a href="safety_glass_film.htm">Safety & Security Film</a></li>
+          </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h3>Contact Us</h3>
+            <div class="footer-contact">
+              <p>
+                <i class="fas fa-phone"></i>
+                <a href="tel:6380655921">Phone/WhatsApp: 6380655921</a>
+              </p>
+              <p>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:contact@artfulhome.com">contact@artfulhome.com</a>
+              </p>
+              <p>
+                <i class="fas fa-map-pin"></i>
+                Multiple locations across India
+                <br>
+                <a href="cities.html" class="text-link">View all cities</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p>&copy; <span id="current-year"></span> Artful Home. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+</body>
+</html>
